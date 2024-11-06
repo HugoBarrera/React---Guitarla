@@ -1,8 +1,15 @@
+/* Importamos utilidades */
+import { useState } from "react";
+
+/* Importamos Componentes */
 import Header from "./components/Header";
 import Guitarra from "./components/Guitarra";
 
 
 function App() {
+
+	// State
+	const [auth, setAuth] = useState([]);
 
   return (
     <>

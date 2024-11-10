@@ -4,21 +4,13 @@ import { useState, useEffect } from "react";
 /* Importamos Componentes */
 import Header from "./components/Header";
 import Guitarra from "./components/Guitarra";
+import { db } from "./data/db";
 
 
 function App() {
 
 	// State
-	const [auth, setAuth] = useState(false);
-
-	useEffect(() => {
-	  console.log(`Componente Listo o Actualizado con Auth: ${auth}`);
-	}, [auth])
-  
-	setTimeout(() => {
-	  setAuth(true)
-	}, 3000)    
-  
+	const [data, setData] = useState(db);
 
   return (
     <>

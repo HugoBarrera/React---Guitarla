@@ -19,12 +19,9 @@ function App() {
 		<main className="container-xl mt-5">
 			<h2 className="text-center">Nuestra Colección</h2>
 			<div className="row mt-5">
-				<Guitarra />
-				<Guitarra />
-				<Guitarra />
-				<Guitarra />
-				<Guitarra />
-				<Guitarra />
+				{data.map(() => (
+					<Guitarra />
+				))}
 			</div>
 		</main>
 

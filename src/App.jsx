@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 /* Importamos Componentes */
 import Header from "./components/Header";
-import Guitarra from "./components/Guitarra";
+import Guitar from "./components/Guitar";
 import { db } from "./data/db";
 
 
@@ -11,6 +11,7 @@ function App() {
 
 	// State
 	const [data, setData] = useState(db);
+	const [cart, setCart] = useState([]);
 
   return (
     <>
@@ -20,9 +21,10 @@ function App() {
 			<h2 className="text-center">Nuestra Colección</h2>
 			<div className="row mt-5">
 				{data.map((guitar) => (
-					<Guitarra
-						key={guitar.id}
-						guitar={guitar}
+					<Guitar
+						key={guitar.id} // Key, siempre se le debe pasar un valor único.
+						guitar={guitar} // Props guitar, sirve para pasar la información de la guitarra al componente Guitar.
+						setCart={setCart} // Props setCart, sirve para pasar la función setCart al componente Guitar.
 					/>
 				))}
 			</div>

@@ -13,6 +13,10 @@ function App() {
 	const [data, setData] = useState(db);
 	const [cart, setCart] = useState([]);
 
+	function addToCart(item) {
+		setCart(prevCart => [...prevCart, item]);
+	}
+
   return (
     <>
         <Header />
@@ -25,6 +29,7 @@ function App() {
 						key={guitar.id} // Key, siempre se le debe pasar un valor único.
 						guitar={guitar} // Props guitar, sirve para pasar la información de la guitarra al componente Guitar.
 						setCart={setCart} // Props setCart, sirve para pasar la función setCart al componente Guitar.
+						addToCart={addToCart} // Pasamos la función addToCart.
 					/>
 				))}
 			</div>
